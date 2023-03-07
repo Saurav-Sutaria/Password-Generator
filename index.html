@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="./main.css">
+</head>
+<body class="m-0 p-0 w-screen">
+    <div class="main-container font-mullish text-white flex flex-col items-center
+    justify-center h-screen
+    bg-gradient-to-r from-lt_violet2 to-dk_Violet">
+        <!--heading-->
+        <h1 class="text-white/75 text-3xl tracking-wider leading-loose font-semibold">PASSWORD GENERATOR</h1>
+
+        <!--password display screen-->
+        <div class="password-display flex justify-between w-4/12 rounded-2xl relative bg-dk_Violet p-4 m-4">
+            <input class="bg-dk_Violet w-full text-2xl text-vb_yellow/95 placeholder-vb_yellow/60" readonly placeholder="Password" id="display" data-password>
+            
+            <button id="copy-btn">
+                <span class="hidden absolute -top-5 right-0 rounded-xl bg-lt_violet2 text-vb_yellow/80 p-2" data-copiedMsg>Copied</span>
+                <img src="./src/copy.svg" width="23" height="23">
+            </button>
+        </div>
+
+        <!--password generation block-->
+        <div class="input-container bg-dk_Violet w-4/12 text-xl p-6 tracking-wider leading-relaxed rounded-2xl m-1">
+            <div class="length-container m-2">
+                <div class="flex justify-between">
+                    <p>Password Length</p>
+                    <p class="text-vb_yellow font-semibold" data-passwordLength>0</p>
+                </div>
+                
+            </div>
+
+            <input class="m-2 w-full" type="range" min="1" max="20" class="slider" data-sliderValue>
+
+            <div class="requirments m-2 ">
+                <div>
+                    <input class="m-2" type="checkbox" id="uppercase">
+                    <label for="uppercase">Include Uppercase Letters</label>
+                </div>
+                <div>
+                    <input class="m-2" type="checkbox" id="lowercase">
+                    <label for="lowercase">Include Lowercase Letters</label>
+                </div>
+                <div>
+                    <input class="m-2" type="checkbox" id="numbers">
+                    <label for="numbers">Include Numbers</label>
+                </div>
+                <div>
+                    <input class="m-2" type="checkbox" id="symbols">
+                    <label for="symbols">Include Symbols</label>
+                </div>
+            
+            </div>
+
+            <!--password strength-->
+            <div class="strength-container m-2 flex justify-between items-center">
+                <p>Strength</p>
+                <div class="strength-color w-5 h-5 bg-white rounded-full" data-indicator></div>
+            </div>
+
+            <button class="m-2 bg-vb_violet w-full rounded-xl p-2 tracking-wider text-vb_yellow font-semibold" id="generate-btn">GENERATE PASSWORD</button>
+        </div>
+
+    </div>
+    <script type="module" src="./script.js"></script>
+</body>
+</html>
